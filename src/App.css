@@ -97,6 +97,14 @@ nav a:hover {
   color: #64b5f6;
 }
 
+nav ul li span {
+  color: var(--secondary-blue);
+}
+
+.cta {
+  background-color: var(--secondary-blue);
+}
+
 .hero {
   height: calc(100vh - 70px);
   display: flex;
@@ -437,9 +445,15 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+.contact-item a {
+  display: inline;
+  margin-left: 10px;
+  color: var(--light-bg);
+}
+
 .contact-icon {
   font-size: 1.5rem;
-  margin-right: 1rem;
+  margin-right: .5rem;
   color: var(--accent-yellow);
 }
 
@@ -683,7 +697,7 @@ h2 {
   }
 
   .contact-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   
   .contact-info {

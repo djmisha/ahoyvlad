@@ -1,13 +1,8 @@
 # TODO
 
-- test
-- get in touch content update
-
 - fix padding on mobile
 
 - add image of Vlad to bio
-
-- test form
 
 # React + Vite
 

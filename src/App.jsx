@@ -84,6 +84,12 @@ function App() {
             <li className="cta">
               <a href="#contact">Contact</a>
             </li>
+            <li>
+              <span>Call or Text</span>
+              <a href="tel:+18589227535">
+                <strong>(858) 922-7535</strong>
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -329,11 +335,27 @@ function App() {
               contact us directly using the information below.
             </p>
 
+            <p className="accommodations-info">
+              We can accommodate any request, including reserving the right size
+              boat for your party, customizing lessons to your skill level, and
+              providing captain-for-hire services tailored to your needs. No
+              sailing journey is too big or too small!
+            </p>
+
+            <p className="call-to-action">
+              <strong>
+                Reach out today and let's plan your perfect sailing experience!
+              </strong>
+            </p>
+
             <div className="contact-details">
               <div className="contact-item"></div>
               <div className="contact-item">
-                <span className="contact-icon">📞</span>
-                <span>(555) 123-4567</span>
+                <span className="contact-icon">📞 </span>
+                <span>
+                  Call or Text
+                  <a href="tel:+18589227535">(858) 922-7535</a>
+                </span>
               </div>
             </div>
           </div>
