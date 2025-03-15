@@ -105,7 +105,8 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   color: white;
-  background-image: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('images/hero.jpg');
+  background-image: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('/images/hero.jpg');
+  /* Add leading slash to reference from root of public directory */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
