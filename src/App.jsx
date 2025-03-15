@@ -85,7 +85,6 @@ function App() {
               <a href="#contact">Contact</a>
             </li>
             <li>
-              <span>Call or Text</span>
               <a href="tel:+18589227535">
                 <strong>(858) 922-7535</strong>
               </a>

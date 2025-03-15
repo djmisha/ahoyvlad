@@ -101,9 +101,12 @@ nav ul li span {
   color: var(--secondary-blue);
 }
 
-.cta {
-  background-color: var(--secondary-blue);
+@media screen and (max-width: 768px) {
+  .cta {
+    background-color: var(--secondary-blue);  
+  }
 }
+
 
 .hero {
   height: calc(100vh - 70px);
