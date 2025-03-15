@@ -10,6 +10,7 @@ const ContactForm = () => {
   const [state, setState] = useState([]);
   const [hasError, setHasError] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e, id) => {
     const fieldName = e.target.name;
@@ -76,6 +77,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const form = e.target;
 
     if (!checkForErrors()) {
@@ -95,19 +97,39 @@ const ContactForm = () => {
         });
       });
 
+      const formData = {
+        "form-name": "ahoy-vlad-contact",
+        ...objectData,
+      };
+
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": form.getAttribute("name"),
-          ...objectData,
-        }),
+        body: encode(formData),
       })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `Form submission failed with status: ${response.status}`
+            );
+          }
+          return response;
+        })
         .then(() => {
           setIsSubmitted(true);
           setState([]);
         })
-        .catch((error) => alert("Error submitting the form: " + error));
+        .catch((error) => {
+          console.error("Form submission error:", error);
+          alert(
+            "Error submitting the form. Please try again or contact us directly."
+          );
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+    } else {
+      setIsSubmitting(false);
     }
   };
 
@@ -128,6 +150,7 @@ const ContactForm = () => {
       className="contact-form"
       name="ahoy-vlad-contact"
       method="POST"
+      action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
@@ -208,8 +231,8 @@ const ContactForm = () => {
         </div>
       )}
 
-      <button type="submit" className="contact-btn">
-        📤 Send Message
+      <button type="submit" className="contact-btn" disabled={isSubmitting}>
+        {isSubmitting ? "Sending..." : "📤 Send Message"}
       </button>
     </form>
   );
