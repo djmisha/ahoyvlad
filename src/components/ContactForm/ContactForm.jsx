@@ -78,7 +78,6 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const form = e.target;
 
     if (!checkForErrors()) {
       // remove id's from State
@@ -98,10 +97,11 @@ const ContactForm = () => {
       });
 
       const formData = {
-        "form-name": "ahoy-vlad-contact",
+        "form-name": "Ahoy Clad Contact Form",
         ...objectData,
       };
 
+      console.log("Form Data:", formData);
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
