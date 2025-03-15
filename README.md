@@ -6,7 +6,7 @@
 
 - add image of Vlad to bio
 
-- add repo and connect to netlify
+- test form
 
 # React + Vite
 

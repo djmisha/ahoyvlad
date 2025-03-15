@@ -131,6 +131,7 @@ const ContactForm = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      netlify
     >
       {/* Hidden field for Netlify form handling */}
       <input type="hidden" name="form-name" value="ahoy-vlad-contact" />
