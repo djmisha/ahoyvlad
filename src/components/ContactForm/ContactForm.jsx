@@ -202,9 +202,10 @@ const ContactForm = () => {
           id="service"
           name="service"
           onChange={(e) => handleChange(e, 5)}
+          defaultValue=""
           required
         >
-          <option value="" disabled selected>
+          <option value="" disabled>
             Select a service
           </option>
           <option value="charter">Charter & Adventure Sailing</option>
