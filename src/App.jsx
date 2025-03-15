@@ -95,8 +95,9 @@ function App() {
       </header>
 
       <section className="hero" id="home">
-        <h1>Expert Sailing Services in San Diego</h1>
+        <h1>Expert Sailing & Captain Services</h1>
         <p>Charters • Training • Captain-for-Hire</p>
+        <span>San Diego, California and beyond</span>
         <a href="#contact" className="btn">
           🧭 Book Your Voyage
         </a>
@@ -317,7 +318,7 @@ function App() {
             </div>
 
             <a href="#contact" className="bio-btn">
-              🌊 Sail With Captain Vlad
+              🌊 Sail With Vlad
             </a>
           </div>
         </div>

@@ -144,6 +144,16 @@ nav ul li span {
   letter-spacing: 2px;
 }
 
+.hero span {
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+
 @media screen and (max-width: 768px) {
   .hero p {
     font-size: 1.2rem;
