@@ -105,10 +105,10 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   color: white;
-  background: linear-gradient(var(--overlay-dark), var(--overlay-dark)), 
-              url('images/hero.jpg');
-  background-size: cover;
+  background-image: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('images/hero.jpg');
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 2rem;
   position: relative;
 }
