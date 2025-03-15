@@ -270,8 +270,8 @@ function App() {
             </p>
             <h4>Safety First Approach</h4>
             <p>
-              Having navigated through challenging conditions across three
-              oceans, Captain Vlad brings unparalleled experience in maritime
+              Having navigated through all kinds of conditions on the Pacific
+              Ocean, Captain Vlad brings unparalleled experience in maritime
               safety protocols. Every expedition is meticulously planned with
               comprehensive safety briefings and equipment checks, ensuring
               peace of mind for all aboard.
