@@ -351,7 +351,6 @@ function App() {
             <div className="contact-details">
               <div className="contact-item"></div>
               <div className="contact-item">
-                <span className="contact-icon">📞 </span>
                 <span>
                   Call or Text
                   <a href="tel:+18589227535">(858) 922-7535</a>

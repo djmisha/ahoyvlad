@@ -453,9 +453,9 @@ h2 {
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  display: block;
+  margin-top: 2.5rem;
+  text-align: center;
 }
 
 .contact-item a {
