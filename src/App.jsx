@@ -285,6 +285,7 @@ function App() {
               priority is ensuring everyone leaves with unforgettable memories.
             </p>
             <form name="contact" method="POST" data-netlify="true">
+              test
               <p>
                 <label>
                   Your Name: <input type="text" name="name" />
