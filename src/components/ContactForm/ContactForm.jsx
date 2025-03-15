@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NetlifyForm from "react-ssg-netlify-forms";
 
 function encode(data) {
   return Object.keys(data)
@@ -75,63 +76,64 @@ const ContactForm = () => {
     return false;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const form = e.target;
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   const form = e.target;
 
-    if (!checkForErrors()) {
-      // remove id's from State
-      const cleanData = state.map((obj) => {
-        const newObj = { ...obj };
-        delete newObj.id;
-        return newObj;
-      });
+  //   if (!checkForErrors()) {
+  //     // remove id's from State
+  //     const cleanData = state.map((obj) => {
+  //       const newObj = { ...obj };
+  //       delete newObj.id;
+  //       return newObj;
+  //     });
 
-      let objectData = {};
+  //     let objectData = {};
 
-      // add values to our new data Object
-      cleanData.forEach((obj) => {
-        Object.keys(obj).forEach((key) => {
-          objectData[key] = obj[key];
-        });
-      });
+  //     // add values to our new data Object
+  //     cleanData.forEach((obj) => {
+  //       Object.keys(obj).forEach((key) => {
+  //         objectData[key] = obj[key];
+  //       });
+  //     });
 
-      const formData = {
-        "form-name": "ahoy-vlad-contact",
-        ...objectData,
-      };
+  //     const formData = {
+  //       "form-name": "ahoy-vlad-contact",
+  //       ...objectData,
+  //     };
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              `Form submission failed with status: ${response.status}`
-            );
-          }
-          return response;
-        })
-        .then(() => {
-          setIsSubmitted(true);
-          setState([]);
-        })
-        .catch((error) => {
-          console.error("Form submission error:", error);
-          alert(
-            "Error submitting the form. Please try again or contact us directly."
-          );
-        })
-        .finally(() => {
-          setIsSubmitting(false);
-        });
-    } else {
-      setIsSubmitting(false);
-    }
-  };
+  //     fetch("/", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       body: encode(formData),
+  //     })
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw new Error(
+  //             `Form submission failed with status: ${response.status}`
+  //           );
+  //         }
+  //         return response;
+  //       })
+  //       .then(() => {
+  //         setIsSubmitted(true);
+  //         setState([]);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Form submission error:", error);
+  //         alert(
+  //           "Error submitting the form. Please try again or contact us directly."
+  //         );
+  //       })
+  //       .finally(() => {
+  //         setIsSubmitting(false);
+  //       });
+  //   } else {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+  const postSubmit = () => {};
 
   if (isSubmitted) {
     return (
@@ -146,14 +148,14 @@ const ContactForm = () => {
   }
 
   return (
-    <form
+    <NetlifyForm
       className="contact-form"
       name="ahoy-vlad-contact"
       method="POST"
       action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
+      postSubmit={postSubmit}
     >
       {/* Hidden field for Netlify form handling */}
       <input type="hidden" name="form-name" value="ahoy-vlad-contact" />
@@ -234,7 +236,7 @@ const ContactForm = () => {
       <button type="submit" className="contact-btn" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "📤 Send Message"}
       </button>
-    </form>
+    </NetlifyForm>
   );
 };
 
